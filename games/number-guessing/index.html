@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Test your intuition in this engaging number guessing game! Guess the secret number within a specified range in as few attempts as possible to maximize your points.">
+	<title class="title">Number Guessing | Minigame Collection</title>
+	<link rel="icon" type="image/x-icon" href="/minigame-collection/img/MinigameCollectionFavicon.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="/minigame-collection/style.css?v=2.8.1.1">
+	<link rel="stylesheet" href="style.css?v=2.8.1.1" id="game-style">
+</head>
+
+<body>
+	<div id="splash-screen" class="splash-screen">
+		<img id="splash-image" src="/minigame-collection/img/Housebird Games Logo Round With Name.png"
+			alt="Splash Image (Housebird Games Logo)" />
+		<div class="loadingSymbol"></div>
+	</div>
+
+	<div id="header"></div>
+
+	<noscript>
+		<div
+			style="background-color: rgb(230, 212, 55); color: black; padding: 1em; font-family: Verdana; line-height: 2em;">
+			<strong>Warning:</strong>
+			JavaScript is not enabled in your browser. This website requires JavaScript to
+			function properly. Please enable JavaScript and refresh the page.
+		</div>
+		<br>
+
+		<style>
+			.splash-screen,
+			.fullscreen-button,
+			#games {
+				display: none;
+			}
+
+			footer.hide {
+				display: flex;
+			}
+		</style>
+	</noscript>
+
+	<script type="module" src="/minigame-collection/src/main.js?v=2.8.1.1"></script>
+	<script type="module" src="game.js?v=2.8.1.1" defer></script>
+
+	<div id="gamesContainer">
+		<div id="games" class="fade-in">
+			<p id="feedback"></p>
+			<br>
+			<div class="grid" id="grid"></div>
+			<br>
+
+			<button class="restartButton marginTop">Restart</button>
+			<div class="button-container">
+				<button id="lowerButton">-5 Numbers</button>
+				<button id="higherButton">+5 Numbers</button>
+			</div>
+			<button id="rulesButton" class="">Rules</button>
+		</div>
+	</div>
+
+	<div id="baseContent"></div>
+
+	<footer class="hide">
+		<a href="https://housebird.games/">Housebird Games Website</a>
+		<p>
+			|
+		</p>
+		<a href="https://stubenvogel.com/impressum/">Imprint</a>
+		<p>
+			|
+		</p>
+		<a href="https://housebird.games/privacy-policy/">Privacy Policy</a>
+	</footer>
+</body>
+
+</html>

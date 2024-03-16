@@ -1,0 +1,29 @@
+{
+    "name": "Minigame Collection from Housebird Games",
+    "short_name": "Minigame Collection",
+    "description": "Engage in classics like Simon Says and Tic Tac Toe, earning points to unlock even more delightful challenges. This Minigame Collection was created and published by Felix T. Vogel in 2023.",
+    "start_url": "/minigame-collection/index.html",
+    "display": "fullscreen",
+    "background_color": "#242a3a",
+    "theme_color": "#58a4e3",
+    "icons": [
+        {
+            "src": "/minigame-collection/img/MinigameCollectionFavicon.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/minigame-collection/img/MinigameCollectionFaviconBig.png",
+            "sizes": "360x360",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/minigame-collection/img/MinigameCollectionFaviconBig.png",
+            "sizes": "360x360",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

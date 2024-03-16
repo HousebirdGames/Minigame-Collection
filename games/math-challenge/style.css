@@ -1,0 +1,119 @@
+h2 {
+    text-align: center;
+}
+
+#games button {
+    align-self: center;
+    width: unset;
+}
+
+#answer-form {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    border: 0.2rem dashed rgba(255, 255, 255, 0.4);
+    border-radius: var(--borderRadius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.question {
+    font-size: var(--fontSize);
+    font-weight: bold;
+    text-align: center;
+    width: 5.8rem;
+    padding: 0.6rem 0 0.6rem 0;
+    border-radius: var(--borderRadius);
+    background-color: var(--background);
+    height: 1.5rem;
+    align-self: center;
+    line-height: 1.5rem;
+}
+
+#answer-form button {
+    width: unset;
+    align-self: center;
+    line-height: 1.5rem;
+}
+
+input[type=number] {
+    background-color: var(--background);
+    color: var(--font);
+    width: fit-content;
+    width: 2.4rem;
+    font-size: var(--fontSize);
+    padding: 0.6rem;
+    border: none;
+    border-radius: var(--borderRadius);
+    font-family: var(--fontFamily);
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    align-self: center;
+    line-height: 1.5rem;
+}
+
+input[type=number]::placeholder {
+    color: var(--font);
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+@keyframes blend {
+
+    5%,
+    100% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+}
+
+#answerInputWrapper.right::before {
+    content: "";
+    position: absolute;
+    border-radius: var(--borderRadiusButtons);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(72, 230, 72);
+    opacity: 0;
+    z-index: 1;
+    animation: blend 2s ease-in-out;
+}
+
+#answerInputWrapper.wrong::before {
+    content: "";
+    position: absolute;
+    border-radius: var(--borderRadiusButtons);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(226, 118, 118);
+    opacity: 0;
+    z-index: 1;
+    animation: blend 1s ease-in-out;
+}
+
+#answerInputWrapper {
+    position: relative;
+    display: inline-block;
+}

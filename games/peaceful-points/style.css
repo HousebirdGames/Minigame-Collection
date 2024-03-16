@@ -1,0 +1,70 @@
+#gamesContainer button {
+    align-self: center;
+    width: 10rem;
+    max-width: 100%;
+}
+
+#gameBox {
+    width: 40rem;
+    max-width: 100%;
+
+}
+
+#game {
+    position: relative;
+    height: 20rem;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-radius: 1rem;
+    margin-bottom: 6rem;
+    overflow: visible;
+}
+
+.point {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--background-secondary);
+    border: 4px solid var(--none);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1000px) {
+    .point:hover {
+        border: 4px solid white;
+        transition: 0.2s;
+    }
+}
+
+.point-hit {
+    opacity: 0;
+    background-color: #a8d8ff;
+    animation: point-hit 1s ease-out;
+}
+
+@keyframes point-hit {
+    0% {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0px) rotateY(0deg);
+    }
+
+    20% {
+        scale: 1.5;
+    }
+
+    40% {
+        scale: 1;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotateY(360deg);
+    }
+}

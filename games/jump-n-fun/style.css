@@ -1,0 +1,72 @@
+#gamesContainer button {
+    align-self: center;
+    width: 10rem;
+    max-width: 100%;
+}
+
+#gameBox {
+    width: 40rem;
+    max-width: 100%;
+
+}
+
+#game {
+    position: relative;
+    height: 20rem;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.1), var(--none));
+    border-bottom: 1px solid white;
+    overflow: hidden;
+}
+
+#character {
+    width: 3rem;
+    height: 4rem;
+    background-color: var(--none);
+    background-image: url('img/Character-Sheet.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    background-size: auto 100%;
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem 2rem 0 0;
+    width: 30px;
+    height: 50px;
+}
+
+.coin {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--background-secondary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.coin-hit {
+    opacity: 0;
+    background-color: #a8d8ff;
+    animation: coin-hit 1s ease-out;
+}
+
+@keyframes coin-hit {
+    0% {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0px) rotateY(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        scale: 2;
+        transform: translateY(-20px) rotateY(360deg);
+    }
+}

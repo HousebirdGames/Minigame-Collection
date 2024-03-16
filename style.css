@@ -1,0 +1,1007 @@
+/*The Minigame Collection was created and published by Felix T. Vogel in 2023*/
+
+:root {
+    --font: white;
+    --font-highlight: #bce1ff;
+    --background: #242a3a;
+    --background-highlight: rgb(46, 62, 92);
+    --background-secondary: #58a4e3;
+    --background-secondary-highlight: #83c7ff;
+    --warning: rgb(158, 54, 54);
+    --none: rgb(255, 255, 255, 0);
+
+    --border: 0.1rem solid white;
+    --border-light: 0.1rem solid rgba(255, 255, 255, 0.4);
+    --borderRadius: 0.4rem;
+    --borderRadiusButtons: 0.4rem;
+    --fontFamily: 'Oxygen', sans-serif;
+    --boxShadow: 0rem 0 4rem rgba(0, 0, 0, 0.54);
+    --fontSize: 1.2rem;
+    --text-shadow: 0.1rem 0.1rem 0rem var(--background);
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Bold.ttf');
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Light.ttf');
+    font-weight: lighter;
+    font-display: swap;
+}
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {}
+
+/* Set the background color of the scrollbar track */
+::-webkit-scrollbar-track {}
+
+/* Set the background color of the scrollbar thumb */
+::-webkit-scrollbar-thumb {}
+
+::-webkit-scrollbar-thumb:hover {}
+
+::-webkit-scrollbar-thumb:active {}
+
+/* Set the color of the scrollbar arrow buttons */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Set the color and style of the scrollbar corner */
+::-webkit-scrollbar-corner {
+    border: none;
+}
+
+/*CSS Normalize*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+rem,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+rembed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+body {
+    text-shadow: var(--text-shadow);
+    display: flex;
+    min-height: 100svh;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--background);
+    color: var(--font);
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6rem;
+}
+
+#header {
+    width: 100%;
+}
+
+header {
+    background-color: var(--background-highlight);
+    position: sticky;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    z-index: 2;
+}
+
+.buttonListHorizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 510px) {
+    header {
+        justify-content: space-around;
+    }
+
+    #title {
+        display: none;
+    }
+
+    .buttonListHorizontal {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .headerButton {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 290px) {
+    .headerButton {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    line-height: 1.6rem;
+}
+
+p {
+    font-size: var(--font);
+    text-align: justify;
+    line-height: 1.6rem;
+    text-shadow: var(--text-shadow);
+}
+
+a {
+    color: var(--font);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 1s;
+}
+
+a:hover {
+    color: var(--font-highlight);
+    transition: 1s;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 2rem;
+}
+
+li {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+li::marker {
+    color: var(--font-highlight);
+}
+
+.updateVersionButton {
+    background-color: var(--none);
+    color: rgba(255, 255, 255, 0.4);
+    padding: 0.2rem;
+}
+
+.updateVersionButton.active {
+    color: var(--background-secondary-highlight);
+}
+
+.updateVersionButton:enabled:hover {
+    background-color: var(--none);
+    color: var(--background-secondary);
+}
+
+.updateVersionButton:enabled:active {
+    background-color: var(--none);
+    color: var(--background-secondary-highlight);
+}
+
+.button-grid {
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+}
+
+#gamesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+#games {
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var(--background-highlight);
+    max-width: 100%;
+    padding: 2rem;
+}
+
+#games button {
+    margin: 0;
+    width: 20rem;
+    max-width: 100%;
+}
+
+#games button.marginTop {
+    margin-top: 0.6rem;
+}
+
+#gameSelectionText {
+    text-align: center;
+}
+
+.gameButton {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+}
+
+.lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgba(46, 62, 92, 0.2) 0%, rgba(46, 62, 92, 0.64) 50%, rgba(46, 62, 92, 0.2) 100%);
+    color: rgb(208, 178, 80);
+    font-weight: bold;
+    border-radius: inherit;
+    transition: 0.4s;
+}
+
+.lock-overlay.available:hover {
+    opacity: 0.4;
+    transition: 0.2s;
+}
+
+.banner {
+    width: 100%;
+    border-radius: var(--borderRadius);
+    margin-top: 0.4rem;
+    transition: 1s;
+}
+
+.banner.locked {
+    opacity: 0.4;
+    transition: 1s;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#game-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1150px) {
+    body {}
+
+    #game {}
+
+    #game-content {
+        flex-direction: row;
+    }
+}
+
+button {
+    text-shadow: var(--text-shadow);
+    width: fit-content;
+    font-size: var(--fontSize);
+    border: none;
+    border-radius: var(--borderRadiusButtons);
+    font-family: var(--fontFamily);
+    color: var(--font);
+    font-weight: bold;
+    background-color: var(--background-secondary);
+    padding: 0.6rem;
+    margin: 0.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:enabled:hover {
+    background-color: var(--background-secondary-highlight);
+    transition: 0.05s;
+}
+
+button:enabled:active {
+    position: relative;
+    left: 0rem;
+    top: 0rem;
+}
+
+button:disabled {
+    opacity: 0.5;
+    transition: 0.4s;
+    cursor: default;
+}
+
+button.menu {
+    width: 100%;
+    text-align: left;
+    margin: 0.4rem 0 0.4rem 0;
+}
+
+.clickable-text {
+    cursor: pointer;
+    transition: 1s;
+}
+
+.clickable-text:hover {
+    color: var(--background-highlight);
+    transition: 0.2s;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.4);
+    transition: 1s;
+}
+
+.popup-content {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-highlight);
+    max-width: 90%;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+    box-shadow: var(--boxShadow);
+    max-width: fit-content;
+    text-align: center;
+    border-radius: var(--borderRadius);
+}
+
+.popup-content button {
+    min-width: 6rem;
+}
+
+#updateNotesButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuList {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--background-highlight);
+    box-shadow: var(--boxShadow);
+    width: 14rem;
+    min-width: 14rem;
+    max-width: 100%;
+    height: calc(100% - 1rem);
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+    .menuList {
+        width: 20rem;
+        min-width: 20rem;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .popup-content {
+        max-height: 60%;
+    }
+}
+
+.popup-content.big {
+    width: 90%;
+    max-width: 40rem;
+}
+
+#alertPopupText {
+    line-height: 1.6rem;
+    text-align: justify;
+}
+
+#alertPopupContent {
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+footer a {
+    opacity: 0.5;
+}
+
+footer a:hover {
+    opacity: 1;
+    color: var(--font);
+}
+
+footer a.openAcknolegmentPopupButton {
+    cursor: pointer;
+}
+
+.backButton {
+    display: none;
+}
+
+#baseContent {
+    width: 100%;
+}
+
+.bottomRow {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#pointsContainer {
+    position: relative;
+    background-color: var(--background-highlight);
+    z-index: 999;
+    padding: 1.5rem 1rem 1rem 2.5rem;
+    border-radius: 4rem 0 0 0;
+}
+
+#points {
+    font-weight: bold;
+    text-align: center;
+}
+
+#addedPoints {
+    position: absolute;
+    bottom: 5rem;
+    right: 2rem;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bottomRowBackButton {
+    background-color: var(--background-highlight);
+    font-size: var(--font);
+    margin: 0;
+    border: none;
+    opacity: 1;
+    font-weight: bold;
+    padding: 1.5rem 4rem 1rem 4rem;
+    border-radius: 4rem 4rem 0 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fullscreen-button {
+    background-color: var(--background-highlight);
+    font-size: var(--font);
+    margin: 0;
+    border: none;
+    opacity: 1;
+    font-weight: bold;
+    padding: 1.5rem 2.5rem 1rem 1rem;
+    border-radius: 0 4rem 0 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fullscreen-button:enabled:hover {
+    border: none;
+    opacity: 1;
+}
+
+.fullscreen-button:active {
+    border: none;
+    opacity: 1;
+
+}
+
+.fullscreen-button:enabled:active {
+    border: none;
+    opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+    #points {
+        font-size: 1rem;
+    }
+
+    .fullscreen-button {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #pointsContainer {
+        padding: 0.75rem 0.5rem 0.64rem 1.5rem;
+    }
+
+    #points {
+        font-size: 0.9rem;
+    }
+
+    .fullscreen-button {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem 0.64rem 0.5rem;
+    }
+
+    #addedPoints {
+        position: fixed;
+        bottom: 3rem;
+        right: 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+#games {
+    padding: 1rem;
+    margin: auto 0.4rem auto 0.4rem;
+}
+
+.audio-controls {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.volume-slider-container {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    padding: 0.4rem;
+    transform: translateX(-50%);
+    background-color: var(--background-secondary);
+    border-radius: var(--borderRadius);
+}
+
+#volumeSlider {
+    margin-top: 0.4rem;
+    width: 2rem;
+    -webkit-appearance: slider-vertical;
+    writing-mode: bt-lr;
+}
+
+.audio-controls:hover .volume-slider-container {
+    display: block;
+}
+
+#answer-form button {
+    width: unset;
+}
+
+input[type=number] {
+    background-color: var(--background-secondary);
+    color: var(--font);
+    font-size: var(--fontSize);
+    padding: 0.6rem;
+    border: none;
+    border-radius: var(--borderRadius);
+    font-family: var(--fontFamily);
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+}
+
+input[type=number]::placeholder {
+    color: var(--font);
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+#permissionNote {
+    display: none;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    padding: 2rem 0 0.4rem 0;
+    max-width: 24rem;
+}
+
+#logo {
+    width: 100%;
+}
+
+.splash-screen.fade-out-splash #splash-image {
+    opacity: 1;
+    transform: scale(0.4);
+}
+
+.splash-screen {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #242a3a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#splash-image {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 2s ease-out, transform 4s ease-out;
+}
+
+.logo {
+    max-width: 100%;
+    width: auto;
+}
+
+/*Loading Symbol*/
+.loadingSymbol {
+    border: 0.4em dashed white;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    animation: spin 1.4s ease-in-out infinite;
+}
+
+.loadingSymbolWrap {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #splash-image {
+        transform: scale(0.7);
+    }
+
+    .splash-screen.fade-out-splash #splash-image {
+        transform: scale(0.8);
+    }
+}
+
+body {
+    background: linear-gradient(135deg, var(--background-secondary), #420642);
+    background-size: 200% 200%;
+    animation: gradientBG 30s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.fade-in {
+    opacity: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+    animation: fadeOut 1s ease-in-out;
+}
+
+.fade-in-fast {
+    opacity: 1;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.fade-out-fast {
+    opacity: 0;
+    animation: fadeOut 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.points-pop-in {
+    opacity: 1;
+    scale: 1;
+    animation: points-pop-in 1s ease-in-out;
+}
+
+@keyframes points-pop-in {
+    0% {
+        opacity: 0;
+        scale: 1;
+        transform: translateY(20px);
+    }
+
+    70% {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0px);
+    }
+
+    80% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.wiggle {
+    animation: wiggle 0.4s ease-in-out;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0);
+        scale: 1;
+    }
+
+    25% {
+        transform: rotate(3deg);
+        scale: 1.2;
+    }
+
+    50% {
+        transform: rotate(-3deg);
+        scale: 1;
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.fade-out-text {
+    color: var(--none);
+    text-shadow: none;
+    animation: fade-out-text 0.5s ease-in-out;
+}
+
+@keyframes fade-out-text {
+    0% {
+        color: unset;
+        text-shadow: unset;
+    }
+
+    100% {
+        color: var(--none);
+        text-shadow: none;
+    }
+}
+
+.fade-in-text {
+    color: unset;
+    text-shadow: unset;
+    animation: fade-in-text 0.5s ease-in-out;
+}
+
+@keyframes fade-in-text {
+    0% {
+        color: var(--none);
+        text-shadow: none;
+    }
+
+    100% {
+        color: unset;
+        text-shadow: unset;
+    }
+}
+
+#installButton {
+    display: none;
+}

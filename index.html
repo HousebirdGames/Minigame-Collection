@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Engage in classics like Simon Says and Tic Tac Toe, earning points to unlock even more delightful challenges. This Minigame Collection was created and published by Felix T. Vogel in 2023.">
+	<title class="title">Minigame Collection</title>
+	<link rel="icon" type="image/x-icon" href="img/MinigameCollectionFavicon.png">
+	<meta name="theme-color" content="#242a3a">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="style.css?v=2.8.1.1">
+	<link rel="manifest" href="manifest.json?v=2.8.1.1">
+	<script type="module" src="service-worker-registration.js?v=2.8.1.1"></script>
+</head>
+
+<body>
+	<div id="splash-screen" class="splash-screen">
+		<img id="splash-image" src="img/Housebird Games Logo Round With Name.png"
+			alt="Splash Image (Housebird Games Logo)" />
+		<div class="loadingSymbol"></div>
+	</div>
+
+	<div id="header"></div>
+
+	<noscript>
+		<div
+			style="background-color: rgb(230, 212, 55); color: black; padding: 1em; font-family: Verdana; line-height: 2em;">
+			<strong>Warning:</strong>
+			JavaScript is not enabled in your browser. This website requires JavaScript to
+			function properly. Please enable JavaScript and refresh the page.
+		</div>
+		<br>
+
+		<style>
+			.splash-screen,
+			.fullscreen-button,
+			#games {
+				display: none;
+			}
+
+			footer.hide {
+				display: flex;
+			}
+		</style>
+	</noscript>
+
+	<script type="module" src="src/main.js?v=2.8.1.1" defer></script>
+
+	<div id="gamesContainer">
+		<div id="games" class="fade-in">
+			<p id="gameSelectionText">Play games to earn points and unlock even more games!</p>
+			<br>
+			<div class="button-grid">
+				<button class="gameButton" id="tic-tac-toe" data-points="100" data-title="Tic Tac Toe"></button>
+				<button class="gameButton" id="math-challenge" data-points="100" data-title="Math Challenge"></button>
+				<button class="gameButton" id="simon-says" data-points="100" data-title="Simon Says"></button>
+				<button class="gameButton" id="memory-match" data-points="100" data-title="Memory Match"></button>
+				<button class="gameButton" id="number-guessing" data-points="200" data-title="Number Guessing"></button>
+				<button class="gameButton" id="peaceful-points" data-points="200" data-title="Peaceful Points"></button>
+				<button class="gameButton" id="ten-cards" data-points="400" data-title="Ten Cards"></button>
+				<button class="gameButton" id="jump-n-fun" data-points="400" data-title="Jump 'n' Fun"></button>
+			</div>
+		</div>
+	</div>
+
+	<div id="baseContent">
+
+		<footer class="hide">
+			<a href="https://housebird.games/">Housebird Games Website</a>
+			<p>
+				|
+			</p>
+			<a href="https://stubenvogel.com/impressum/">Imprint</a>
+			<p>
+				|
+			</p>
+			<a href="https://housebird.games/privacy-policy/">Privacy Policy</a>
+		</footer>
+</body>
+</body>
+
+</html>
